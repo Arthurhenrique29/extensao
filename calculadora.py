@@ -37,15 +37,13 @@ def loop_calculadora():
         if op.lower() == "sair":
             box(["Até logo! Obrigado por utilizar a calculadora."])
             break
+        
         if op not in ["+", "-", "*", "/"]:
             box(["Operação inválida. Tente novamente."])
             continue
-        try:
-            a = float(input("Primeiro número: "))
-            b = float(input("Segundo número: "))
-        except ValueError:
-            box(["Entrada inválida: digite números válidos."])
-            continue
+        
+        a = float(input("Primeiro número: "))
+        b = float(input("Segundo número: "))
         resultado = calcular(a, b, op)
         box([f"Resultado: {a} {op} {b} = {resultado}"])
 
